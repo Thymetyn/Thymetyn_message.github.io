@@ -1,0 +1,273 @@
+*{
+    text-decoration: none;
+    margin: 10px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.h1{
+    font-size: 50px;
+    font-weight: 800px;
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    font-family: Poppins;
+    color: #012941;
+}
+
+.glowing-text {
+  text-shadow: 0 0 10px #fff(255, 255, 255, 0.15); /* Highlight putih */
+  color: #0C0C0C; /* Warna teks hitam */
+  font-family: 'Arial', sans-serif; /* Ganti font menjadi Arial */
+}
+.glowing-text {
+  text-shadow: 0 0 10px #FFFFFF(255, 255, 255, 0.7);
+}
+.h3{
+font-size: 10px;
+font-weight: 500px;
+text-align: center;
+font-family: Poppins;
+margin-top: 2px;
+color: #012941;
+}
+.message {
+  font-size: 15px;
+  font-family: Oswald;
+  margin-bottom: 30px;
+  margin: 5px;
+  margin-bottom: 20px;
+  color: #000; /* Untuk memastikan teks pesan menggunakan warna putih */
+  text-shadow: -2px -2px 4px rgba(255, 255, 255, 0.5);; /* Highlight pada pesan */
+}
+
+.gallery-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db; /* Warna biru */
+  color: #fff; /* Warna teks putih */
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 20px;
+}
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --first-color: hsl(0, 0%, 0%);
+  --title-color: hsl(0, 0%, 0%);
+  --text-color: hsl(0, 0%, 0%);
+  --body-color: hsl(0, 0%, 0%);
+  --container-color: hsl(0, 0%, 100%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Poppins", sans-serif;
+  --h2-font-size: 1.25rem;
+  --small-font-size: .813rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 500px) {
+  :root {
+    --h2-font-size: 1.5rem;
+    --small-font-size: .875rem;
+  }
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-family: Poppins;
+    background-color: #FFFFFF;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CARD ===============*/
+.container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    place-items: center;
+    margin-inline: 1.5rem;
+    padding-block: 5rem;
+    text-align: center;
+}
+
+.container {
+    width: 100vw; 
+    height: auto;
+    margin: 0;
+    background-image: url("Background_our dream.jpeg");
+    background-size: cover auto; 
+    background-position: center;
+    text-align: left; 
+}
+
+.card__container {
+  display: grid;
+  row-gap: 5rem;
+}
+
+.card__article {
+  position: relative;
+  overflow: hidden;
+}
+
+.card__img {
+  width: 328px;
+  border-radius: 1.5rem;
+}
+
+.card__data {
+  width: 280px;
+  background-color: var(--container-color);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
+  border-radius: 1rem;
+  position: sticky;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+}
+
+.card__description {
+  display: block;
+  color: #0C0C0C;
+  font-size: var(--small-font-size);
+  margin-bottom: .25rem;
+}
+
+.card__title {
+  font-size: var(--h2-font-size);
+  font-weight: 500;
+  color: #424874;
+  margin-bottom: .75rem;
+}
+
+.card__button {
+  text-decoration: none;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  color: var(--first-color);
+}
+
+.card__button:hover {
+  text-decoration: underline;
+}
+
+/* Naming animations in hover */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
+}
+
+/* Card animation */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 340px) {
+  .container {
+    margin-inline: 1rem;
+  }
+
+  .card__data {
+    width: 250px;
+    padding: 1rem;
+  }
+}
+
+/* For medium devices */
+@media screen and (min-width: 768px) {
+  .card__container {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1.5rem;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .container {
+    height: 100vh;
+  }
+
+  .card__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card__img {
+    width: 348px;
+  }
+  .card__data {
+    width: 316px;
+    padding-inline: 2.5rem;
+  }
+}
+

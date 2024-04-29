@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("background_blur.jpeg"); /* Ganti 'background.jpg' dengan nama file gambar Anda */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    color: white;
+}
+
+.title {
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.text-description{
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+video {
+    max-width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Efek bayangan untuk video */
+}
